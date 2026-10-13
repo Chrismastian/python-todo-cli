@@ -2,19 +2,19 @@
 
 [![CI](https://github.com/Chrismastian/python-todo-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/Chrismastian/python-todo-cli/actions/workflows/ci.yml)
 
-Todo list berbasis CLI untuk belajar Python: file I/O (baca/tulis JSON), struktur data list of dict, `argparse`, `pytest`, dan CI.
+A CLI todo list built while learning Python: file I/O (read/write JSON), list-of-dict data structures, `argparse`, `pytest`, and CI.
 
-## Cara pakai
+## Usage
 
 ```bash
-python -m todo.cli add "belajar python"
+python -m todo.cli add "learn python"
 python -m todo.cli add "push repo"
 python -m todo.cli list
 python -m todo.cli done 1
 python -m todo.cli delete 2
 ```
 
-Data disimpan di `todo.json` (dibuat otomatis).
+Data is stored in `todo.json` (created automatically).
 
 ## Development
 
@@ -23,12 +23,12 @@ pip install pytest
 pytest
 ```
 
-## Struktur
+## Structure
 
 ```
 todo/
-  core.py   # logika murni: load/save JSON + operasi list of dict
-  cli.py    # argparse: baca perintah terminal, panggil core
+  core.py   # pure logic: load/save JSON + list-of-dict operations
+  cli.py    # argparse: reads terminal commands, calls core
 tests/
   test_core.py
 ```
