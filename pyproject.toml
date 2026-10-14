@@ -1,7 +1,7 @@
 [project]
 name = "python-todo-cli"
 version = "0.1.0"
-description = "Todo list CLI sederhana untuk belajar Python"
+description = "A simple CLI todo list built while learning Python"
 requires-python = ">=3.11"
 
 [tool.pytest.ini_options]

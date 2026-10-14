@@ -4,16 +4,16 @@ from todo import core
 
 
 def test_load_empty():
-    """File belum ada -> list kosong."""
-    result = core.load(Path("__test_tidak_ada.json"))
+    """File does not exist yet -> empty list."""
+    result = core.load(Path("__test_missing.json"))
     assert result == []
 
 
 def test_add():
     todos = []
-    todos = core.add(todos, "belajar python")
+    todos = core.add(todos, "learn python")
     assert len(todos) == 1
-    assert todos[0]["text"] == "belajar python"
+    assert todos[0]["text"] == "learn python"
     assert todos[0]["done"] is False
     assert todos[0]["id"] == 1
 
@@ -23,7 +23,7 @@ def test_add():
 
 
 def test_done():
-    todos = [{"id": 1, "text": "kopi", "done": False}]
+    todos = [{"id": 1, "text": "coffee", "done": False}]
     core.done(todos, 1)
     assert todos[0]["done"] is True
 

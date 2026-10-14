@@ -1,4 +1,4 @@
-"""Logika todo: baca/tulis JSON + operasi list of dict."""
+"""Todo logic: read/write JSON + list-of-dict operations."""
 import json
 from pathlib import Path
 
@@ -9,6 +9,7 @@ def load(path=DATA_FILE):
     if not path.exists():
         return []
     return json.loads(path.read_text("utf-8"))
+
 
 def save(todos, path=DATA_FILE):
     path.write_text(json.dumps(todos, indent=2), "utf-8")
@@ -25,7 +26,7 @@ def done(todos, todo_id):
         if t["id"] == todo_id:
             t["done"] = True
             return todos
-    raise ValueError("todo tidak ditemukan")
+    raise ValueError("todo not found")
 
 
 def delete(todos, todo_id):
@@ -33,4 +34,4 @@ def delete(todos, todo_id):
         if t["id"] == todo_id:
             todos.pop(i)
             return todos
-    raise ValueError("todo tidak ditemukan")
+    raise ValueError("todo not found")
